@@ -9,6 +9,8 @@ import { CafeService } from '../cafe.service';
 })
 export class CafeListComponent implements OnInit {
   cafes: Array<Cafe> = [];
+  cafeorigen: number = 0;
+  cafeblend: number = 0;
 
   constructor(private cafeService: CafeService) {
 
@@ -22,6 +24,8 @@ export class CafeListComponent implements OnInit {
     this.cafeService.getCafes().subscribe({
       next: (cafe) => {
         this.cafes = cafe;
+        this.cafeorigen = cafe.filter(c => c.tipo == 'Café de Origen').length;
+        this.cafeblend = cafe.filter(c => c.tipo == 'Blend').length;
       },
       error: (error) => {
         console.error('Error al consultar la informacion', error);
