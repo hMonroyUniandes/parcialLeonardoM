@@ -6,6 +6,7 @@ import { of } from 'rxjs';
 import { DebugElement } from '@angular/core';
 import { Cafe } from '../cafe';
 
+
 class MockCafeService {
   getCafes() {
     return of([
