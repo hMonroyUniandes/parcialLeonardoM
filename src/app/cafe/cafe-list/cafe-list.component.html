@@ -1,0 +1,20 @@
+<main>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" style="background-color: black; color: white;">#</th>
+          <th scope="col" style="background-color: black; color: white;">Nombre</th>
+          <th scope="col" style="background-color: black; color: white;">Tipo</th>
+          <th scope="col" style="background-color: black; color: white;">Regi&oacute;n</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let cafe of cafes">
+          <th scope="row">{{ cafe.id }}</th>
+          <td>{{ cafe.nombre }}</td>
+          <td>{{ cafe.tipo }}</td>
+          <td>{{ cafe.region }}</td>
+        </tr>
+      </tbody>
+    </table>
+</main>
